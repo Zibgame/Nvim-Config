@@ -16,7 +16,13 @@ I tweaked it with my own plugins, key mappings, UI tweaks, and settings to fit h
 To install this config, simply copy and paste this entire block in your terminal:
 
 ```bash
-mv ~/.config/nvim ~/.config/nvim_backup_$(date +%Y%m%d_%H%M%S) && \
-git clone https://github.com/ton-utilisateur/Vim-Config.git ~/Vim-Config && \
-mkdir -p ~/.config && \
-cp -r ~/Vim-Config/* ~/.config/nvim/
+# Cloner le repo
+git clone https://github.com/Zibgame/Vim-Config
+
+# Copier le contenu du dossier (à la racine du repo) dans ~/.config/nvim
+mkdir -p ~/.config/nvim
+cp -r Vim-Config/nvim/* ~/.config/nvim/
+
+# Supprimer le dossier .git si présent
+rm -rf ~/.config/nvim/.git
+nvim
