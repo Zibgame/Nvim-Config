@@ -18,10 +18,4 @@ I tweaked it with my own plugins, key mappings, UI tweaks, and settings to fit h
 It’s a good idea to backup your existing config before installing mine, to avoid losing anything.
 
 ```bash
-# Backup your current nvim config folder
-mv ~/.config/nvim ~/.config/nvim.bak
-
-# Optional but recommended backups
-mv ~/.local/share/nvim ~/.local/share/nvim.bak
-mv ~/.local/state/nvim ~/.local/state/nvim.bak
-mv ~/.cache/nvim ~/.cache/nvim.bak
+mv ~/.config/nvim ~/.config/nvim_backup
