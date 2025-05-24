@@ -13,9 +13,10 @@ I tweaked it with my own plugins, key mappings, UI tweaks, and settings to fit h
 
 ## 🛠 Installation Guide
 
-### Step 1 — Backup your current Neovim configuration (recommended)
-
-It’s a good idea to backup your existing config before installing mine, to avoid losing anything.
+To install this config, simply copy and paste this entire block in your terminal:
 
 ```bash
-mv ~/.config/nvim ~/.config/nvim_backup
+mv ~/.config/nvim ~/.config/nvim_backup_$(date +%Y%m%d_%H%M%S) && \
+git clone https://github.com/ton-utilisateur/Vim-Config.git ~/Vim-Config && \
+mkdir -p ~/.config && \
+cp -r ~/Vim-Config/* ~/.config/nvim/
