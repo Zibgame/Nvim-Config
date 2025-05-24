@@ -1,6 +1,8 @@
-# 💤  My Custom Nvim Config 
+# 💤 Zibgame Custom Nvim Config
 
-Welcome to my personalized Vim configuration! This setup is built on top of [LazyVim](https://github.com/LazyVim/LazyVim) — a powerful and flexible Neovim config — but fully customized by me to boost my productivity and coding comfort. 💻✨
+Welcome to my personalized Neovim configuration! This setup is built on top of [LazyVim](https://github.com/LazyVim/LazyVim) — a powerful and flexible Neovim config — but fully customized by me to boost my productivity and coding comfort. 💻✨
+
+---
 
 ## 🎯 Why This Config?
 
@@ -9,9 +11,17 @@ I tweaked it with my own plugins, key mappings, UI tweaks, and settings to fit h
 
 ---
 
-## 🛠 Installation
+## 🛠 Installation Guide
 
-1. **Clone this repo:**
-   ```bash
-   git clone https://github.com/yourusername/your-repo.git
-   cd your-repo/Vim-Config
+### Step 1 — Backup your current Neovim configuration (recommended)
+
+It’s a good idea to backup your existing config before installing mine, to avoid losing anything.
+
+```bash
+# Backup your current nvim config folder
+mv ~/.config/nvim ~/.config/nvim.bak
+
+# Optional but recommended backups
+mv ~/.local/share/nvim ~/.local/share/nvim.bak
+mv ~/.local/state/nvim ~/.local/state/nvim.bak
+mv ~/.cache/nvim ~/.cache/nvim.bak
