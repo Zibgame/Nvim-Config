@@ -26,5 +26,8 @@ cp -r Vim-Config/Vim-Config/* ~/.config/nvim/
 # Supprimer les métadonnées git
 rm -rf ~/.config/nvim/.git
 
+# Supprimer le dossier cloné
+rm -rf Vim-Config
+
 # Lancer Neovim
 nvim
