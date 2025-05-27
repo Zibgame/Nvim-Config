@@ -10,11 +10,10 @@ return {
         end
 
         local filepath = vim.fn.expand("%:p")
-        local output = "/tmp/a.out"
+        local output = vim.fn.expand("%:p:r")  -- même dossier, nom sans extension
 
-        vim.cmd("w") -- sauvegarde
+        vim.cmd("w")
 
-        -- Compilation
         local compile_cmd = string.format("gcc \"%s\" -o \"%s\" 2>&1", filepath, output)
         local compile_result = vim.fn.system(compile_cmd)
 
@@ -23,7 +22,6 @@ return {
           return
         end
 
-        -- Exécution
         local run_result = vim.fn.system(output)
 
         vim.notify("✅ Exécution terminée :\n" .. run_result, vim.log.levels.INFO, { timeout = 10000 })
@@ -32,4 +30,5 @@ return {
     },
   },
 }
+
 
