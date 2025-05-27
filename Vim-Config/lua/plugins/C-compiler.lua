@@ -24,7 +24,7 @@ return {
 
         local run_result = vim.fn.system(output)
 
-        vim.notify("✅ Exécution terminée :\n" .. run_result, vim.log.levels.INFO, { timeout = 10000 })
+        vim.notify("✅ Exécution terminée :\n\n" .. run_result, vim.log.levels.INFO, { timeout = 10000 })
       end,
       desc = "Compiler et exécuter (stdout dans notif)",
     },
