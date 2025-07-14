@@ -17,17 +17,17 @@ To install this config, simply copy and paste this entire block in your terminal
 
 ```bash
 # Cloner le repo
-git clone https://github.com/Zibgame/Vim-Config.git
+git clone https://github.com/Zibgame/Nvim-Config.git
 
 # Copier le contenu du bon dossier
 mkdir -p ~/.config/nvim
-cp -r Vim-Config/Vim-Config/* ~/.config/nvim/
+cp -r Nvim-Config/* ~/.config/nvim/
 
 # Supprimer les métadonnées git
 rm -rf ~/.config/nvim/.git
 
 # Supprimer le dossier cloné
-rm -rf Vim-Config
+rm -rf Nvim-Config
 
 # Lancer Neovim
 nvim
