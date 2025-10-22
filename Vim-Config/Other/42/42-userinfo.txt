@@ -1,3 +1,0 @@
-pseudo=zibgame
-email=zibgame@student.42.fr
-

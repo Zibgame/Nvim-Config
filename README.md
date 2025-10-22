@@ -18,3 +18,4 @@ Configuration **propre et portable** de Vim / Neovim, compatible avec :
 ```bash
 git clone https://github.com/zcadinot/Nvim-Config.git
 cd Nvim-Config
+
