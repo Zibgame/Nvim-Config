@@ -56,7 +56,9 @@ Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
-Plug 'preservim/nerdcommenter'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-lua/plenary.nvim' " dépendance obligatoire
+
 
 " --- 🧬 Syntaxe améliorée ---
 Plug 'sheerun/vim-polyglot'
@@ -70,6 +72,10 @@ Plug '42Paris/42header'
 
 " --- 💫 Effet fluide du curseur ---
 Plug 'sphamba/smear-cursor.nvim'
+Plug 'github/copilot.vim'
+Plug 'Pocco81/TrueZen.nvim'
+Plug 'folke/twilight.nvim'
+Plug 'junegunn/limelight.vim'
 
 call plug#end()
 
@@ -174,3 +180,11 @@ function! StartifyMappings()
   nnoremap <buffer> n :NERDTreeToggle<CR>
 endfunction
 
+" =======================
+" 🔭 Telescope keymaps
+" =======================
+nnoremap <leader>ff :Telescope find_files<CR>
+nnoremap <leader>fg :Telescope live_grep<CR>
+nnoremap <leader>fb :Telescope buffers<CR>
+nnoremap <leader>fo :Telescope oldfiles<CR>
+nnoremap <leader>fh :Telescope help_tags<CR>
