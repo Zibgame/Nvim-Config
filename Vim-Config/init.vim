@@ -41,7 +41,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'morhetz/gruvbox'
 Plug 'dracula/vim'
 Plug 'bluz71/vim-moonfly-colors'
-Plug 'flazz/vim-colorschemes'
 
 " --- 🧩 Icônes ---
 Plug 'ryanoasis/vim-devicons'
@@ -57,36 +56,38 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-lua/plenary.nvim' " dépendance obligatoire
-
+Plug 'nvim-lua/plenary.nvim'
 
 " --- 🧬 Syntaxe améliorée ---
 Plug 'sheerun/vim-polyglot'
 
-" --- 🌈 Divers ---
+" --- 🌈 Divers utiles ---
 Plug 'easymotion/vim-easymotion'
 Plug 'mhinz/vim-startify'
 Plug 'psliwka/vim-smoothie'
-Plug 'Zibgame/Vim-C_compiler'
 Plug '42Paris/42header'
 
 " --- 💫 Effet fluide du curseur ---
 Plug 'sphamba/smear-cursor.nvim'
-Plug 'github/copilot.vim'
-Plug 'Pocco81/TrueZen.nvim'
-Plug 'folke/twilight.nvim'
-Plug 'junegunn/limelight.vim'
 
 call plug#end()
 
 " =======================
-" 💫 smear-cursor (effet fluide)
+" 💫 smear-cursor (effet fluide et rapide)
 " =======================
 lua << EOF
 require('smear_cursor').setup({
-  stiffness = 0.65,          -- élasticité
-  trailing_stiffness = 0.25, -- traînée
-  distance_stop_animating = 0.05,
+  stiffness = 0.9,              -- plus haut = plus rapide / plus net
+  trailing_stiffness = 0.5,     -- moins de traînée
+  distance_stop_animating = 0.02,
+  update_interval = 0,
+  smoothness = 0.15,            -- un petit lissage
+  disable_in_insert_mode = false,
+  cursor_colors = {
+    normal = "#8be9fd",
+    insert = "#50fa7b",
+    visual = "#ffb86c",
+  },
 })
 EOF
 
@@ -103,8 +104,6 @@ let g:lightline = {
       \   'gitbranch': 'fugitive#head'
       \ }
       \ }
-
-set laststatus=2
 
 " =======================
 " 🎨 Thème par défaut
@@ -159,26 +158,9 @@ let g:startify_lists = [
       \ { 'type': 'sessions',  'header': ['   Mes sessions sauvegardées']},
       \ ]
 
-let g:startify_custom = [
-      \ { 'type': 'commands', 'header': ['   Raccourcis Utiles'], 'content': [
-      \     {'c': 'NERDTreeToggle', 'd': 'Ouvrir / fermer NERDTree'},
-      \     {'c': 'PlugStatus', 'd': 'Voir l’état des plugins'},
-      \ ]}
-      \ ]
-
-nnoremap <leader>m :call StartifyMenu()<CR>
+nnoremap <leader>m :Startify<CR>
 nnoremap <leader>p :PlugStatus<CR>
 nnoremap <leader>n :NERDTreeToggle<CR>
-
-augroup startify_mappings
-  autocmd!
-  autocmd FileType startify call StartifyMappings()
-augroup END
-
-function! StartifyMappings()
-  nnoremap <buffer> p :PlugStatus<CR>
-  nnoremap <buffer> n :NERDTreeToggle<CR>
-endfunction
 
 " =======================
 " 🔭 Telescope keymaps
