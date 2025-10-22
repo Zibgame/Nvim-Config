@@ -4,58 +4,17 @@ Welcome to my personalized Neovim configuration! This setup is built on top of [
 
 ---
 
-## 🎯 Why This Config?
+# 🌀 Nvim-Config by zcadinot
 
-LazyVim gives a great base with smart defaults and plugin management.  
-I tweaked it with my own plugins, key mappings, UI tweaks, and settings to fit how I work best.
+Configuration **propre et portable** de Vim / Neovim, compatible avec :
+- 💻 Linux standard
+- 🏫 L'école 42 (installation sans sudo)
 
 ---
 
-## 🛠 Installation Guide
+## 🚀 Installation
 
-To install this config, simply copy and paste this entire block in your terminal:
-
+### 1️⃣ Cloner le dépôt
 ```bash
-# Cloner le repo
-git clone https://github.com/Zibgame/Nvim-Config.git
-
-# Copier le contenu du bon dossier
-mkdir -p ~/.config/nvim
-cp -r Nvim-Config/* ~/.config/nvim/
-
-# Supprimer les métadonnées git
-rm -rf ~/.config/nvim/.git
-
-# Supprimer le dossier cloné
-rm -rf Nvim-Config
-
-# Lancer Neovim
-nvim
-```
-
-## instaler a 42
-
-```bash
-
-# 📦 1. Créer le dossier local si nécessaire
-mkdir -p ~/.local
-
-# 📥 2. Télécharger la version portable de Neovim
-wget https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz -O ~/.local/nvim-linux-x86_64.tar.gz
-
-# 📂 3. Extraire et renommer le dossier
-tar -xzf ~/.local/nvim-linux-x86_64.tar.gz -C ~/.local
-mv ~/.local/nvim-linux-x86_64 ~/.local/nvim-portable
-
-# 🧹 4. Supprimer l’archive (optionnel)
-rm ~/.local/nvim-linux-x86_64.tar.gz
-
-# ⚙️ 5. Créer un alias local (ne modifie pas le PATH)
-echo 'alias nvim="$HOME/.local/nvim-portable/bin/nvim"' >> ~/.zshrc
-
-# 🔁 6. Recharger la config
-source ~/.zshrc
-
-# ✅ 7. Vérification
-nvim --version
-```
+git clone https://github.com/zcadinot/Nvim-Config.git
+cd Nvim-Config
