@@ -70,6 +70,15 @@ Plug '42Paris/42header'
 " --- 💫 Effet fluide du curseur ---
 Plug 'sphamba/smear-cursor.nvim'
 
+" --- 🚫 Plugins désactivés (pour compatibilité) ---
+" Plug 'github/copilot.vim'        " nécessite connexion GitHub + Node >= 18
+" Plug 'Pocco81/TrueZen.nvim'      " dépendances visuelles + nui.nvim
+" Plug 'folke/twilight.nvim'       " mode focus dépendant de Treesitter
+" Plug 'junegunn/limelight.vim'    " ancien plugin, conflit avec smear-cursor
+" Plug 'folke/noice.nvim'          " nécessite nui.nvim et notify
+" Plug 'MunifTanjim/nui.nvim'      " dépendance complexe de noice
+" Plug 'rcarriga/nvim-notify'      " pas utile sans noice
+
 call plug#end()
 
 " =======================
