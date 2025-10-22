@@ -7,8 +7,9 @@ echo "🌿 Installation de la configuration Neovim personnalisée"
 CONFIG_DIR="$HOME/.config/nvim"
 NVIM_PORTABLE_DIR="$HOME/.local/nvim-portable"
 PLUG_PATH="${XDG_DATA_HOME:-$HOME/.local/share}/nvim/site/autoload/plug.vim"
+FONTS_DIR="$HOME/.local/share/fonts"
 
-# 📁 Chemin absolu du script (peu importe où tu l’exécutes)
+# 📁 Chemin absolu du script (marche depuis n’importe où)
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 echo
@@ -52,6 +53,21 @@ mkdir -p "$CONFIG_DIR"
 cp "$SCRIPT_DIR/Vim-Config/init.vim" "$CONFIG_DIR/init.vim"
 
 # ---------------------------------------------------------------------
+# 🔤 Installation de la Nerd Font
+# ---------------------------------------------------------------------
+echo "🔤 Installation d’une Nerd Font (JetBrainsMono)..."
+mkdir -p "$FONTS_DIR"
+cd "$FONTS_DIR"
+
+# Téléchargement direct depuis Nerd Fonts (version légère)
+wget -q https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip -O JetBrainsMono.zip
+unzip -o JetBrainsMono.zip >/dev/null 2>&1
+rm JetBrainsMono.zip
+fc-cache -fv >/dev/null
+
+echo "✅ Nerd Font JetBrainsMono installée avec succès !"
+
+# ---------------------------------------------------------------------
 # 🔌 Installation de vim-plug
 # ---------------------------------------------------------------------
 if [ ! -f "$PLUG_PATH" ]; then
@@ -75,7 +91,14 @@ else
     nvim +PlugInstall +qall || echo "⚠️ Lance manuellement : nvim +PlugInstall"
 fi
 
-echo
+# ---------------------------------------------------------------------
+# ✅ Fin de l’installation
+# ---------------------------------------------------------------------
+clear
 echo "🎉 Installation terminée avec succès !"
-echo "➡️  Lance Neovim avec : nvim"
+echo "✨ Tout est prêt, tu peux utiliser Neovim avec : nvim"
+echo
+echo "📝 Ouverture automatique de ~/.zshrc pour vérification de l’alias..."
+sleep 1
+nvim "$HOME/.zshrc"
 
