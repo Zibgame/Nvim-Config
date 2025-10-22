@@ -35,6 +35,8 @@ nvim
 
 ## instaler a 42
 
+```bash
+
 # 📦 1. Créer le dossier local si nécessaire
 mkdir -p ~/.local
 
@@ -56,4 +58,4 @@ source ~/.zshrc
 
 # ✅ 7. Vérification
 nvim --version
-
+```
